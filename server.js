@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const DATA_FILE = path.join(__dirname, "feedbacks.json");
 
@@ -182,7 +182,7 @@ app.get("*", (req, res) => {
 
 app.listen(PORT, () => {
     console.log("\n╔══════════════════════════════════════════════════╗");
-    console.log(`║   🚀 SERVER RUNNING ON http://localhost:${PORT}   ║`);
+    console.log(`║   🚀 SERVER RUNNING ON PORT ${PORT}                ║`);
     console.log("║   📝 Student Feedback System Active              ║");
     console.log("║   💾 Data persists in feedbacks.json             ║");
     console.log("║   🎯 Open your browser to get started!          ║");

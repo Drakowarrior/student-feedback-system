@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Poppins', 'Segoe UI', 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 80px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.custom-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 32px !important;
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.custom-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 50px -15px rgba(0, 0, 0, 0.3);
+}
+
+h1, .display-6 {
+    background: linear-gradient(135deg, #1e293b, #2d3a4e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+}
+
+h1 i, h3 i {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #4f46e5;
+}
+
+.tracking-tight {
+    letter-spacing: -0.02em;
+}
+
+.form-control {
+    border-radius: 20px;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    background-color: #fefefe;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+    font-weight: 500;
+}
+
+.form-control:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+    outline: none;
+    background-color: #ffffff;
+}
+
+.form-control::placeholder {
+    color: #a0aec0;
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.form-label i {
+    color: #4f46e5;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(95deg, #1e293b 0%, #2d3a4e 100%);
+    border: none;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    border-radius: 60px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(95deg, #0f172a 0%, #1e293b 100%);
+    transform: scale(1.01);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.feedback-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feedback-card {
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(4px);
+    border-radius: 28px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    animation: fadeSlideUp 0.4s ease-out;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feedback-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+    background: white;
+    border-color: #cbd5e1;
+}
+
+.feedback-name {
+    font-size: 1.35rem;
+    font-weight: 800;
+    background: linear-gradient(120deg, #1e293b, #334155);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.feedback-name::before {
+    content: "\f007";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    background: none;
+    -webkit-text-fill-color: #4f46e5;
+    font-size: 1.2rem;
+    color: #4f46e5;
+}
+
+.feedback-email {
+    color: #475569;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    background: #f1f5f9;
+    display: inline-flex;
+    padding: 5px 14px;
+    border-radius: 40px;
+}
+
+.feedback-email::before {
+    content: "\f0e0";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.feedback-text {
+    margin: 16px 0 18px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #1f2937;
+    background: #f8fafc;
+    padding: 14px 18px;
+    border-radius: 20px;
+    border-left: 4px solid #4f46e5;
+    font-weight: 500;
+}
+
+.button-group {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.button-group .btn-warning {
+    background: #fbbf24;
+    border: none;
+    border-radius: 40px;
+    padding: 8px 22px;
+    font-weight: 600;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #1e293b;
+}
+
+.button-group .btn-warning:hover {
+    background: #f59e0b;
+    transform: scale(0.98);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.button-group .btn-danger {
+    background: #ef4444;
+    border: none;
+    border-radius: 40px;
+    padding: 8px 22px;
+    font-weight: 600;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.button-group .btn-danger:hover {
+    background: #dc2626;
+    transform: scale(0.98);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+#emptyPlaceholder {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    border-radius: 40px;
+    padding: 40px 20px;
+    text-align: center;
+    border: 1px dashed #cbd5e1;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(38, 73, 154, 0.8);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    left: 0;
+    right: 0;
+}
+
+.footer span {
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+.footer i.fa-heart {
+    animation: heartbeat 1.5s ease infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+#feedbackCount {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    font-weight: 700;
+    border-radius: 80px;
+}
+
+@media (max-width: 768px) {
+    .custom-card {
+        margin: 0 8px;
+        border-radius: 28px !important;
+    }
+
+    .feedback-card {
+        margin: 0 4px;
+        padding: 1.2rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .button-group .btn-warning,
+    .button-group .btn-danger {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .feedback-name {
+        font-size: 1.2rem;
+    }
+
+    .feedback-text {
+        font-size: 0.9rem;
+        padding: 12px 14px;
+    }
+
+    h1.display-6 {
+        font-size: 1.7rem;
+    }
+
+    .form-control-lg {
+        font-size: 0.95rem;
+        padding: 12px 16px;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+    }
+
+    .footer span {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-card .card-body {
+        padding: 1.8rem !important;
+    }
+
+    .feedback-email {
+        font-size: 0.7rem;
+        padding: 3px 12px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #eef2ff;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4f46e5;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3730a3;
+}
+
+@keyframes subtlePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.2);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(79, 70, 229, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+    }
+}
+
+.btn-primary:focus-visible {
+    animation: subtlePulse 0.6s;
+}
+
+.feedback-card:first-child {
+    margin-top: 0;
+}
+
+button:focus, .form-control:focus {
+    outline: none;
+}
+
+.container .feedback-list-container {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.feedback-list-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+#emptyPlaceholder i {
+    color: #94a3b8;
+}
+
+.custom-card .form-control:hover {
+    border-color: #a5b4fc;
+    background-color: #ffffff;
+}
